@@ -1,0 +1,413 @@
+/* -- Compiles to ThankYou_05_2016.css-- */
+
+/* -- Default Imports -- */ 
+@import '../scripts/vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import 'variables.scss';
+@import 'fonts.scss';
+
+// ------ BASE SETUP ------ //
+
+body {
+  // set what 1em is equal to (default is 16px) and scale
+  // down for screens
+  font-size: 16px;
+
+  @media (max-width: $screen-md-max) { 
+    font-size: 14px;
+  }
+  @media (max-width: $screen-sm-max) { 
+    font-size: 14px;
+  }
+  @media (max-width: $screen-xs-max) { 
+    font-size: 14px;
+  }
+
+  font-family : $sans-serif;
+}
+
+html, body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+  overflow-y: auto;
+}
+
+// ------ UTILITIES ------ //
+
+mark {
+  background: #fcff00;
+  padding: 0px 7px;
+  margin-left: -5px;
+  color: $red;
+  font-weight: 600;
+}
+
+/* special mobile width*/
+$gs5  : 360px;
+$iP6  : 374px;
+
+
+.dd-btn {
+  text-align: center;
+  letter-spacing: 1px;
+  display: block;
+  // margin: .5em auto;
+  font-family: $sans-serif;
+  font-weight: $bold;
+  color: $true-white; 
+  padding: 10px;
+  border: 1px solid darken(#6FC2FF, 30%);
+  border-radius: 5px;
+  font-size: 19px;
+  width: 100%;
+
+  p {
+  	margin-bottom: 2px;
+  }
+
+  @media (max-width: $iP6) {
+    padding: 10px 18px;
+  }
+  
+  background: #00abee; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYWJlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBhYmVlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMGFiZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDZmZGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMjA3Y2NhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(top,  #00abee 0%, #00abee 0%, #00abee 0%, #006fdc 99%, #207cca 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00abee), color-stop(0%,#00abee), color-stop(0%,#00abee), color-stop(99%,#006fdc), color-stop(100%,#207cca)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00abee', endColorstr='#207cca',GradientType=0 ); /* IE6-8 */
+   
+  //invert the gradient on hover
+  &:hover {
+   
+  background: #006fdc; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNmZkYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMDdjY2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDBhYmVlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(top,  #006fdc 0%, #2989d8 99%, #207cca 100%, #00abee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006fdc), color-stop(99%,#2989d8), color-stop(100%,#207cca), color-stop(100%,#00abee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006fdc', endColorstr='#00abee',GradientType=0 ); /* IE6-8 */
+
+  cursor: pointer;
+  }
+}
+
+
+//--- Registration.html Styles ---//
+
+
+/*-------------*\
+	INTRO
+\*-------------*/
+
+.intro-top {
+
+}//end .intro-top
+
+.intro-top__heading {
+	text-align: center;
+
+	h2 {
+		font-size: 2.25em;
+		line-height: 1.2;
+		margin: 0;
+		font-weight: 600;
+		font-style: italic;
+
+		@media (max-width: $screen-sm-max) { 
+		  font-size: 2em;
+		}
+
+		@media (max-width: $screen-xs-max) { 
+		  font-size: 1.8em;
+		}
+	}
+
+
+	h1 {
+		font-size: 3em;
+		line-height: 1.2;
+		color: $red;
+		font-weight: 600;
+		margin-top: .15em;
+
+		@media (max-width: $screen-sm-max) { 
+		  font-size: 2.3em;
+		}
+
+		@media (max-width: $screen-xs-max) { 
+		  font-size: 1.89em;
+		}
+	}
+
+}
+
+.intro-top__sub-heading {
+	font-weight: 400;
+	line-height: 1.2;
+	font-style: italic;
+	margin-top: 10px;
+}
+
+
+/*---------------*\
+	Jbox-RedDotted
+\*---------------*/
+
+.Jbox-RedDotted {
+	text-align: center;
+
+	border: 2px dotted $red;
+	background: #eff9fe;
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+	padding: 1.25em 0;
+
+	@media (max-width: $screen-sm-max) { 
+		 margin-left: 1em;
+		 margin-right: 1em;
+	}
+
+	@media (max-width: $screen-xs-max) { 
+		 margin: 1em 1em 2em;	
+	}
+
+	.Jbox-copy {
+
+		.date {
+			font-size: 2.25em;
+			line-height: 1.2;
+			margin: 0;
+			margin-bottom: .4em;
+			font-weight: 600;
+
+			@media (max-width: $screen-sm-max) { 
+			  font-size: 2em;
+			}
+
+			@media (max-width: $screen-xs-max) { 
+			  font-size: 1.8em;
+			}
+		}
+
+		.time-left {
+			font-size: 1.5em;
+			line-height: 1.2;
+			color: $red;
+			font-weight: 700;
+		}
+
+		.mod-xxs-break  {
+			display: none;
+			
+			@media (min-width: 360px) and (max-width: 414px) { 
+		   display: block;
+			}
+		}
+
+		.enter-broadcast {
+			@extend .time-left;
+			color: #000000;
+			font-weight: 600;
+			margin-bottom: 5px;
+		}
+
+		a {
+			font-size: 1.1875em;
+			text-decoration: underline;
+		}
+	}//end .Jbox-copy
+}//end .Jbox-RedDotted
+
+
+/*---------------*\
+	timer styles
+\*---------------*/
+
+.timer-box {
+	padding-bottom: .5em;
+}
+
+#countdown-clock {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    font-size: 30px;
+}
+
+.digit-wrapper {
+    padding: 10px;
+    border-radius: 3px;
+    background: none;
+    display: inline-block;
+}
+
+.countdown-timer {
+    padding: 15px;
+    border-radius: 3px;
+    display: inline-block;
+
+    // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3d3d3d+10,777777+50,3d3d3d+90 //
+    background: #3d3d3d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #3d3d3d 10%, #777777 50%, #3d3d3d 90%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #3d3d3d 10%,#777777 50%,#3d3d3d 90%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #3d3d3d 10%,#777777 50%,#3d3d3d 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d3d', endColorstr='#3d3d3d',GradientType=0 ); /* IE6-9 */
+
+}
+
+.timer-label {
+	color: #3D3D3D;
+  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: $screen-xs-max) { 
+	.digit-wrapper {
+		padding: 10px .15em;
+	}
+
+	#countdown-clock {
+		font-size: 25px;
+	}
+}
+
+/*------------------*\
+	Calendar Reminder
+\*------------------*/
+.calendar__reminder {
+	
+	.dont-forget {
+		font-size: 1.25em;
+		line-height: 1.2;
+	}
+
+	.icon-spacer {
+		margin-right: 10px;
+	}
+
+	a {
+		font-size: 1.25em;
+		line-height: 1;
+		color: #000000;
+
+		&:hover {
+			color: #777777;
+		}
+
+		&:first-of-type {
+			margin-right: 1em;
+		} 
+	}
+}
+
+/*---------------*\
+	Gray Stripe
+\*---------------*/
+
+.gray-stripe {
+  background-color: #f1f2f2;
+  margin: 2.5em 0;
+  padding-bottom: 2.5em;
+}
+
+.gray-stripe__content {
+	margin: 1.5em auto 0;
+	text-align: center;
+
+	h2 {
+		font-size: 1.5em;
+		line-height: 1.2;
+		color: #000000;
+		font-weight: 600;
+		margin-bottom: 0;
+
+		&.red {
+			color: $red;
+			margin-top: 5px;
+			margin-bottom: 1em;
+		}
+	}
+
+	span {
+		font-weight: 600;
+	}
+
+	.name {
+		font-size: 1.25em;
+		line-height: 1.1;
+		margin: .5em auto 0;
+	}
+
+	.title {
+		font-size: 0.875em;
+		font-style: italic;
+		line-height: 1;
+
+		@media (max-width: $screen-sm-max) { 
+		  margin-bottom: 2em;
+		}
+	}
+ 
+}//end .gray-stripe__content
+
+
+/*---------------*\
+	Social Media
+\*---------------*/
+.social__media {
+	
+	.share-text {
+		font-size: 1.125em;
+		line-height: 1.2;
+		font-style: italic;
+	}
+
+	.facebook-icon {
+		padding: 0;
+		margin-right: -10px;
+		width: 50px;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		@media (max-width: $screen-xs-max) { 
+		  margin-bottom: 1em;
+		}
+	}
+
+	.twitter-icon {
+		background: #55acee;
+		border-radius: 5px;
+		padding: 0;
+		margin-right: -10px;
+		width: 50px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	@media (max-width: $screen-xs-max) { 
+		.facebook-icon, .twitter-icon {
+			margin-left: 10px
+		}
+	}
+}
+
+
+
+
+
+

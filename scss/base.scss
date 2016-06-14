@@ -1,0 +1,140 @@
+// ------ BASE SETUP ------ //
+
+body {
+  // set what 1em is equal to (default is 16px) and scale
+  // down for screens
+  font-size: 16px;
+
+  @media (max-width: $screen-md-max) { 
+    font-size: 14px;
+  }
+  @media (max-width: $screen-sm-max) { 
+    font-size: 14px;
+  }
+  @media (max-width: $screen-xs-max) { 
+    font-size: 14px;
+  }
+
+  font-family : $sans-serif;
+}
+
+html, body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+  overflow-y: auto;
+}
+
+// ------ UTILITIES ------ //
+
+.dd-btn {
+
+  text-align: center;
+  letter-spacing: 1px;
+  display: block;
+  margin: .5em auto;
+  font-family: $sans-serif;
+  font-weight: $bold;
+  color: $true-white; 
+  padding: 10px 22px;
+  border: 1px solid darken(#6FC2FF, 30%);
+  border-radius: 5px;
+  font-size: 1.75em;
+  text-shadow: 0px 2px 2px $true-black;
+  min-width: 12em;
+
+  background: #00abee; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYWJlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBhYmVlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMGFiZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDZmZGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMjA3Y2NhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(top,  #00abee 0%, #00abee 0%, #00abee 0%, #006fdc 99%, #207cca 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00abee), color-stop(0%,#00abee), color-stop(0%,#00abee), color-stop(99%,#006fdc), color-stop(100%,#207cca)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #00abee 0%,#00abee 0%,#00abee 0%,#006fdc 99%,#207cca 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00abee', endColorstr='#207cca',GradientType=0 ); /* IE6-8 */
+
+  @media (max-width: $screen-sm-max) { 
+    width: 60%;
+    font-size: 25px;
+    padding: -1px 42px;
+    font-weight: 600;
+  }
+   
+  //invert the gradient on hover
+  &:hover {
+   
+  background: #006fdc; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNmZkYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMDdjY2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDBhYmVlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-linear-gradient(top,  #006fdc 0%, #2989d8 99%, #207cca 100%, #00abee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006fdc), color-stop(99%,#2989d8), color-stop(100%,#207cca), color-stop(100%,#00abee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #006fdc 0%,#2989d8 99%,#207cca 100%,#00abee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006fdc', endColorstr='#00abee',GradientType=0 ); /* IE6-8 */
+  }
+}
+
+
+
+// ------ CLASSIC DIGITIMER ------ //
+
+.digitimer {
+  display: table;
+  margin: 2em auto 1em auto;
+ 
+  @media (max-width: $screen-xs-max) { 
+    margin-bottom: 0;
+  }
+}
+ 
+.digitimer_digit_separator {
+  width: 5px;
+  height: 60px;
+  background-image: url('/js/digitimer/img/digitimer_digit_colon4.png');
+  
+  @media (max-width: $screen-xs-max) { 
+    width: 7px;     
+    height: 31px;
+    background-image: url('/js/digitimer/img/digitimer_digit_colon4_M.png');
+    background-repeat:no-repeat;
+  }   
+}
+ 
+.digitimer_digit {
+  width: 46px;
+  height: 60px;
+  background-image: url('/js/digitimer/img/digitimer_digits4.png');
+ 
+  @media (max-width: $screen-xs-max) { 
+    width: 24px;
+    height: 31px;
+    background-image: url('/js/digitimer/img/digitimer_digits4_M.png');
+  }
+}
+
+//the image that has the "days, hours, minutes, seconds" 
+.timer-label {
+  display: block;
+  margin: 0 auto;
+ 
+  @media (max-width: $screen-xs-max) { 
+    margin-top: 1em;
+    width: 200px;
+  }
+}
+
+// ------ END DIGITIMER ------ //
+
+
+
+
+
+
+
+
+
+

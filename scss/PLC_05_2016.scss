@@ -1,0 +1,952 @@
+/* compiles to SEPERATE PLC_05_2016.css */
+
+@import '../scripts/vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import 'variables.scss';
+@import 'fonts.scss';
+
+
+//------ VARIABLES & FONTS ------//
+
+$white: #FFFFFF;
+$black: #000000;
+$gray: #CCCCCC;
+$bg-gray: #e9e9e9;
+$red: #ac2b28;
+$blue: #e1f1f6;
+$black-text: #092F57;
+
+$thin: 100;
+$reg: 400;
+$semi-bold: 600;
+$bold: 700;
+
+//------ BASE SETUP ------//
+
+body {
+    // set what 1em is equal to (default is 14px) and scale
+    // down for screens
+    font-size: 14px;
+    @media (max-width: $screen-md-max) {
+        font-size: 12px;
+    }
+    @media (max-width: $screen-sm-max) {
+        font-size: 11px;
+    }
+    @media (max-width: $screen-xs-max) {
+        font-size: 10px;
+    }
+    font-family: $sans-serif;
+    //hide the google analytics include iframe
+    //(it pushes up the footer)
+    iframe[name="google_conversion_frame"] {
+        display: none;
+    }
+}
+
+html, body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+//Al added this class
+.itemNoShow {
+    display: none;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    border: 6px solid #000;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.txt-red {
+    color: $red;
+}
+
+
+
+//------ VID HEADER ------//
+
+.vid-header {
+  background-color: $white;
+  width: 100%;
+  //offset from the header include
+  margin-top: -85px;
+
+  .vid-container {
+    margin-bottom: 2em;
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    // adjust arrow placement (defaults) of slick carousel
+    // (matches custom 500px breakpoint for xs)
+    .slick-prev {
+        @media (max-width: $screen-sm-max) {
+            left: 0;
+        }
+        @media (max-width: 500px) {
+            left: 0;
+        }
+    }
+    .slick-next {
+        @media (max-width: 500px) {
+            right: 0;
+        }
+    }
+    .slick-slider {
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: 10px;
+        }
+    }
+    .slick-container {
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .vid-thumb {
+      cursor: pointer;
+      
+      .vid-num {
+          text-align: center;
+          font-weight: $bold;
+          font-size: 1.2em;
+          margin-top: 4px;
+      }
+      .free-dl {
+          text-align: center;
+      }
+      .active-arrow, .active-arrow-blue {
+          display: none;
+          position: relative;
+          bottom: -10px;
+      }
+
+      &.active {
+          //if the .vid-thumb is .active, show the arrow on md and up
+          .active-arrow {
+              display: block;
+              position: absolute;
+              bottom: -50px;
+              left: 51%;
+              margin-left: -38px;
+              @media (max-width: $screen-sm-max) {
+                  display: none;
+              }
+          }
+      }// end &.active
+    }// end .vid-thumb
+  }// end .vid-container
+}// end .vid-header
+
+
+
+
+//------ BODY ------//
+.hero-content {
+    position: relative;
+    background: url(../img/gray-gradient-bg.png) repeat-x;
+    text-align: center;
+    z-index: 1;
+    
+    h1 {
+        color: $red;
+    }
+    h2 {
+        color: $black;
+    }
+    
+    .video-pitch {
+      @media (max-width: $screen-xs-max) {
+          margin-top: 2em;
+      }
+
+      h1, h2, h3 {
+        width: 65%;
+        margin: 0 auto;
+        
+        @media (max-width: $screen-xs-max) {
+           width: 90%;
+        }
+      }
+
+      h1 {
+        font-size: 3.15em;
+        font-weight: $bold;
+        margin-top: .5em;
+        &.sub {
+            font-size: 2em;
+            margin-top: .5em;
+        }
+        
+        @media (max-width: $screen-xs-max) {
+            font-size: 2.5em;
+        }
+
+        @media (max-width: 359px) {
+            font-size: 2.3em;
+        }
+      }
+
+      h2 {
+        font-size: 1.75em;
+        font-weight: $semi-bold;
+        margin-top: 1.5em;
+      }
+
+      h3 {
+        font-size: 1.65em;
+        font-weight: $semi-bold;
+        margin-top: 1em;
+        line-height: 26px;
+        
+        @media (max-width: $screen-xs-max) {
+          font-weight: $reg;
+          font-size: 1.75em;
+        }
+      }
+    }// end .video-pitch
+    
+    .hero-vid {
+        margin-top: 1em;
+        .vid-frame {
+            position: absolute;
+            z-index: 0;
+            left: 102px;
+            @media (max-width: $screen-md-max) {
+                left: 0;
+            }
+            @media (max-width: $screen-sm-max) {
+                width: 739px;
+                left: 15px;
+            }
+            @media (max-width: $screen-xs-max) {
+                width: 372px;
+                left: 191px;
+            }
+        }
+        .wistia-vid {
+            position: relative;
+            z-index: 10;
+            //push down a bit to fit into the frame
+            margin-top: 10px;
+            @media (max-width: $screen-sm-max) {
+                z-index: 100;
+                width: 600px;
+                height: 337px;
+                margin-top: 8px;
+            }
+            @media (max-width: $screen-xs-max) {
+                border: 5px solid $black;
+                border-radius: 10px;
+                z-index: 100;
+                width: 300px;
+                height: 168px;
+                margin-top: 5px;
+            }
+        }
+        // end .wistia-vid
+   
+    }
+    //end .hero-vid
+    .dd-btn {
+        border-radius: 6px;
+        padding: 15px 40px;
+        color: $white;
+        line-height: 1.2;
+        border: none;
+        border-top: 2px #87d7fe solid;
+        p {
+            text-shadow: $black-text 0 1px 3px;
+            font-weight: 600;
+        }
+        //bg gradient
+        background: #7db9e8;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #7db9e8 0%, #2989d8 63%, #1e5799 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7db9e8), color-stop(63%, #2989d8), color-stop(100%, #1e5799));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #7db9e8 0%, #2989d8 63%, #1e5799 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #7db9e8 0%, #2989d8 63%, #1e5799 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #7db9e8 0%, #2989d8 63%, #1e5799 100%);
+        /* IE10+ */
+        background: linear-gradient(to bottom, #7db9e8 0%, #2989d8 63%, #1e5799 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 );
+        /* IE6-9 */
+        //invert the gradient on hover
+        &:hover {
+            background: #1e5799;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 63%, #7db9e8 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1e5799), color-stop(63%, #2989d8), color-stop(100%, #7db9e8));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 63%, #7db9e8 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #1e5799 0%, #2989d8 63%, #7db9e8 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #1e5799 0%, #2989d8 63%, #7db9e8 100%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, #1e5799 0%, #2989d8 63%, #7db9e8 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+            /* IE6-9 */
+            cursor: pointer;
+        }
+    }
+    .download-guide-btn {
+        margin: 10px 0;
+        display: inline-block;
+        font-size: 2em;
+        p {
+            margin: 0;
+        }
+    }
+    .email-click {
+        font-size: 1.25em;
+        width: 35%;
+        margin: 0 auto;
+        @media (max-width: $screen-xs-max) {
+            width: 70%;
+        }
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    .free-download-container {
+        position: relative;
+        padding-top: 20px;
+        background-color: $bg-gray;
+        text-align: left;
+        margin-top: 6em;
+        margin-bottom: 2em;
+        @media (max-width: $screen-sm-max) {
+            margin-top: 4em;
+        }
+        .mag-pic-container {
+            position: relative;
+            //kill padding for maximum pic size
+            padding: 0;
+            //need to specify height to position the pic absolutely
+            height: 200px;
+            @media (max-width: $screen-md-max) {
+                height: 180px;
+            }
+            @media (max-width: $screen-sm-max) {
+                height: 100%;
+            }
+            .mag-pic {
+                position: absolute;
+                bottom: 0px;
+                @media (max-width: $screen-sm-max) {
+                    bottom: -200px;
+                    // display: block;
+                    // position: initial;
+                    // margin: 0 auto;
+                    // //define width to center
+                    // width: 285px;
+                    // margin-bottom: 10px;
+                }
+                @media (max-width: $screen-xs-max) {
+                    width: 230px;
+                }
+            }// end .mag-pic
+        }// end .mag-pic-container
+        
+        .mag-copy {
+            h1, h2, h3 {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            h1 {
+                font-size: 2.5em;
+                font-weight: $bold;
+            }
+            h2 {
+                font-size: 1.5em;
+                font-weight: $bold;
+                color: #092f57;
+            }
+            h3 {
+                font-size: 3em;
+                font-weight: $thin;
+                color: $red;
+            }
+            p {
+                font-size: 1.25em;
+                margin-top: 10px;
+                width: 80%;
+            }
+            @media (max-width: $screen-sm-max) {
+                text-align: center;
+                p {
+                    width: 100%;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }// end .free-download-container
+    
+    .comments-title {
+        text-align: left;
+        h2 {
+            color: $black-text;
+            font-size: 1.5em;
+            font-weight: $bold;
+            margin: 0;
+        }
+        p {
+            font-size: 4em;
+            font-weight: $thin;
+            color: $red;
+            @media (max-width: $screen-xs-max) {
+                font-size: 2.5em;
+            }
+        }
+        .soc-icon {
+            display: inline-block;
+            border: 1px solid $red;
+        }
+        // end .soc-icon
+   
+    }
+    // end .comments-title
+    .social-icons {
+        float: left;
+        padding-right: 40px;
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: 20px;
+        }
+    }
+    .comments-section {
+        text-align: left;
+        .blog-comments {}
+        // end .blog-comments
+        .sidebar-vids {
+            a {
+                p {
+                    color: $black;
+                }
+            }
+            .text-container {
+                margin-top: -5em;
+                padding-bottom: 4em;
+                p {
+                    margin-bottom: 2px;
+                }
+                .vid-num {
+                    font-weight: $bold;
+                    font-size: 1.35em;
+                }
+                .free-dl {
+                    font-style: italic;
+                }
+                .vid-title {
+                    font-size: 1.15em;
+                    // width: 55%;
+                    line-height: 1.1;
+                }
+            }
+        }// end .sidebar-vids
+    }// end .comments-section
+}//end .hero-content
+
+
+
+
+// ------ STYLE VARIANT ------//
+// add .style-blue to body to change page styling to white/blue theme
+
+body {
+  &.style-blue {
+    header {
+      .header-strip {
+        border-bottom: none;
+        background-color: $white;
+        color: $black-text;
+        font-size: 1.2em;
+        .red-strip {
+            display: initial;
+        }
+        .opt-a {
+            display: none;
+        }
+        .opt-b {
+            display: block;
+        }
+      }
+      //end .header-strip
+
+      .slick-arrow-left, .slick-arrow-right {
+        background-color: $blue;
+        &.slick-disabled {
+            background-color: #f6f6f6;
+        }
+      }
+    }//end header
+
+    .hero-content {
+        background: url(../img/blue-gradient-bg.jpg) repeat-x;
+    }
+    .free-download-container {
+        background-color: $blue;
+    }
+    .vid-thumb {
+      &.active {
+        //if the .vid-thumb is .active, show the arrow
+        .active-arrow-blue {
+          display: block;
+          position: absolute;
+          bottom: -50px;
+          left: 50%;
+          margin-left: -38px;
+
+          @media (max-width: $screen-sm-max) { 
+              display: none;
+          }
+        }
+        .active-arrow {
+          display: none;
+        }
+      }// end &.active
+    }//end .vid-thumb
+  }//end .style-blue
+}//end body
+
+
+
+// ------- Black Bar Header -------//
+body {
+    
+    &.style-blue {
+        // Survey page styles only
+        .survey-header-logo {
+            position: absolute;
+            left: 50%;
+            margin-left: -63px;
+            z-index: 2;
+        }
+        .survey-hero-container {
+            text-align: center;
+            margin-top: 16.5em;
+            margin-bottom: 6em;
+            @media (max-width: $screen-xs-max) {
+                margin-top: 14.5em;
+                margin-bottom: 6em;
+            }
+            .survey-hero-content {
+                h1 {
+                    font-size: 3.57em;
+                    margin-bottom: 1em;
+                    font-weight: $bold;
+                    color: $red;
+                }
+                h2 {
+                    font-size: 1.875em;
+                    line-height: 1.375em;
+                    font-weight: $reg;
+                    margin-top: -1em;
+                }
+            }
+        }
+        .monkey-styles {
+            width: 100%;
+            height: 600px;
+            border: none;
+            padding-bottom: 4px;
+        }
+        //end .monkey styles
+        .survey-thank-you {
+            text-align: center;
+            h1 {
+                font-size: 3.57em;
+                margin-bottom: 1em;
+                font-weight: $bold;
+                color: $red;
+            }
+            h2 {
+                font-size: 1.875em;
+                line-height: 1.375em;
+                font-weight: $reg;
+                margin-top: -1em;
+            }
+            p {
+                color: #535353;
+                font-size: 1.714em;
+                line-height: 1.1em;
+            }
+            span {
+                font-weight: $semi-bold;
+                font-size: italic;
+            }
+        }
+        // end .survey-thank-you
+        //end Survey page styles
+        .vid-header {
+            .header-strip {
+                background-color: $black;
+                color: $white;
+                height: 2.15em;
+                border-bottom: #ac2b28 solid;
+                text-align: right;
+                padding-right: 129px;
+            }
+            // end .header strip    
+            .logo-container {
+                .logo-text {
+                    width: 110%;
+                    p {
+                        font-size: 1em;
+                        color: #092f57;
+                        text-align: center;
+                        padding-top: 7em;
+                        line-height: 1.1em;
+                        margin-left: -45%;
+                        @media (max-width: $screen-md-max) {
+                            padding-top: 8em;
+                            margin-left: -34%;
+                        }
+                        @media (max-width: $screen-sm-max) {
+                            padding-top: 9em;
+                            margin-left: -8%;
+                        }
+                        @media (max-width: $screen-xs-max) {
+                            padding-top: 10em;
+                        }
+                    }
+                }
+                //end .logo-text
+           
+            }
+            //end .logo-container
+            
+            .vid-container {
+                .item {
+                    &.active {
+                        //on mobile, highlight the bg blue instead of the arrow
+                        @media (max-width: $screen-xs-max) { 
+                            // background-color: $blue;
+                            // padding: 20px 0;
+
+                            img {
+                                border: 8px solid #C0C3C5;
+                                border-radius: 8px;
+                            }
+                        }
+                    }
+                }//end .item
+
+                .vid-thumb {
+                    cursor: default;
+                    
+                    @media (max-width: $screen-xs-max) { 
+                        margin-bottom: 10px;
+                    }
+
+                    a {
+                        color: $black;
+                    }
+                    
+                    &.comingsoon {
+                        //hide anything inside of .vid-container that has the class .revealed
+                        .not-revealed {
+                            p {
+                                margin-bottom: -1px;
+                                font-size: 1.25em;
+                                color: #9a9a9a;
+                            }
+                            .vid-num {
+                                font-weight: $bold;
+                            }
+                            .free-dl {
+                                font-weight: $reg;
+                                line-height: 1;
+                            }
+                            .vid-title {
+                                font-style: italic;
+                                text-align: center;
+                                color: $red;
+                                margin-bottom: -1em;
+
+                                @media (max-width: $screen-xs-max) { 
+                                    margin-bottom: 10px;
+                                }
+                            }// end .vid-title
+                        }// end .not-revealed
+                        
+                        .revealed {
+                            margin-bottom: 3px;
+                            
+                            .free-dl {
+                                line-height: 1;
+                            }
+
+                            p {
+                                margin-bottom: 0px;
+                                font-size: 1.25em;
+                                color: $black;
+                            }
+                        }
+                    }// end &.coming soon
+               
+                }
+                // end. vid thumb
+           
+            }
+            // end .vid-container in header
+            @media (max-width: $screen-xs-max) {
+                height: inherit;
+            }
+            .header-logo {
+                @media (max-width: $screen-xs-max) {
+                    position: relative;
+                    width: 75px;
+                    top: -10px;
+                }
+                @media (max-width: 320px) {
+                    width: 57px;
+                }
+            }
+            //end .header.logo
+       
+        }
+        // end header
+   
+    }
+    // end &.style-blue
+}
+
+// end body
+
+//------ BODY ------//
+
+.hero-content {
+  
+  .dd-btn {
+    padding: 15px 50px;
+    @media (max-width: $screen-sm-max) {
+        padding: 15px 40px;
+    }
+    @media (max-width: 440px) {
+        padding: 15px 40px;
+    }
+  }//end .dd-btn
+    
+  .email-click {
+    font-size: 1.25em;
+    width: 40%;
+    margin: 0 auto;
+    @media (max-width: $screen-xs-max) {
+        width: 40%;
+    }
+    a {
+        color: $black;
+    }
+  }
+
+  .video-pitch {
+    h1 {
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      font-weight: $bold;
+      color: #092f57;
+
+      @media (max-width: $screen-xs-max) { 
+          line-height: 1;
+      }
+    }
+
+    h1, h3 {
+      width: auto;
+      @media (max-width: $screen-xs-max) {
+          width: 81%;
+      }
+    }
+  }//end .video-pitch
+    
+  .free-download-container {
+    .mag-copy {
+      h1 {
+        font-size: 2.15em;
+        font-weight: 600;
+      }
+
+      h2 {
+        margin-top: -10px;
+      }
+
+      h3 {
+        font-size: 2.85em;
+        font-weight: 300;
+
+        @media (max-width: $screen-xs) { 
+          font-size: 2.5em;
+        }
+
+        @media (max-width: 359px) { 
+          font-size: 2.1em;
+        }
+      }
+
+      p {
+        line-height: 1.25em;
+        //was 1.35em
+      }
+    }//end .mag-copy 
+  }//end .free-download-container
+    
+  .comments-section {
+      text-align: left;
+      .cta-center {
+          text-align: center;
+      }
+      .blog-comments {}
+      // end .blog-comments
+      .sidebar-vids {
+          a {
+              p {
+                  color: $black;
+              }
+          }
+          .vid-container {
+              cursor: pointer;
+              .not-revealed {
+                  display: none;
+              }
+              &.comingsoon {
+                  //hide anything inside of .vid-container that has .revealed
+                  .revealed {
+                      display: none;
+                  }
+                  //sets color of .non-revealed p elements
+                  .not-revealed {
+                      display: block;
+                      p {
+                          color: #9a9a9a;
+                      }
+                  }
+              }// end &.coming soon
+              
+              .sidebar-on {
+                  display: inline;
+              }
+              .sidebar-off {
+                  display: none;
+              }
+              &.comingsoon {
+                  cursor: text;
+                  .sidebar-on {
+                      display: none;
+                  }
+                  .sidebar-off {
+                      display: inline;
+                  }
+              }
+          }// end .vid-container
+          
+          .text-container {
+              margin-top: -6.5em;
+              padding-bottom: 0em;
+              margin-bottom: 4em;
+              p {
+                  margin-bottom: 2px;
+              }
+              .vid-num {
+                  font-weight: $bold;
+                  font-size: 1.35em;
+              }
+              .free-dl {
+                  font-style: italic;
+              }
+              .vid-title {
+                  font-size: 1.2em;
+                  font-weight: normal;
+              }
+          }// end .text-containter
+      }// end .sidebar-vids
+  }// end .comments-section
+}//end .hero-content
+
+.cta-row {
+  margin-top: 4em;
+  text-align: center;
+  
+  @media (max-width: $screen-xs-max) { 
+      margin-top: 0;
+  }
+  
+  h3 {
+    font-size: 2em;
+    font-weight: $bold;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 1.7em;
+    margin-top: 0;
+  }
+
+  @media (max-width: 320px) { 
+   h3 {font-size: 1.8em;}
+   h4 {font-size: 1.5em;}  
+  }
+
+  .red {
+    color: $red;
+  }
+
+  .mod-break-359 {
+    display: none; 
+
+    @media (max-width: 359px) { 
+      display: block;
+    }
+  }
+}//end .cta-row
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

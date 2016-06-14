@@ -1,0 +1,271 @@
+/* -- Compiles to main.css-- */
+/* -- Used For Live Broadcast Main Page -- */
+
+/*--------*\
+	 INTRO
+\*--------*/
+.intro {
+	margin: 0em auto 3em;
+	text-align: center;
+
+	@media (max-width: $screen-sm-max) { 
+		margin: -2em auto 1em;
+	}
+
+	@media (max-width: $screen-xs-max) { 
+		margin: -1em auto 1em;
+	}
+
+	h1 {
+		font-size: 3em;
+		line-height: 1.2;
+		color: $red;
+		font-weight: 700;
+		margin:0 auto .5em;
+		
+		@media (max-width: $screen-xs-max) { 
+			font-size: 2em;
+		}
+
+		@media (max-width: 414px) { 
+			font-size: 1.6em;
+		}
+
+		@media (max-width: 320px) { 
+			font-size: 1.35em;
+		}
+		
+	}
+
+	h2 {
+		font-size: 2em;
+		line-height: 1.2;
+		color: #000000;
+		font-weight: 600;
+		margin: 1em auto 0;
+
+		@media (max-width: $screen-xs-max) { 
+			margin-top: 0;
+		}
+
+		@media (max-width: $screen-xs-max) { 
+			font-size: 1.5em;
+		}
+	}
+
+	.mod-break-414 {
+		display: none;
+
+		@media (max-width: 414px) { 
+			display: block;
+		}
+	}
+}
+
+/*--------*\
+	 Video
+\*--------*/
+
+.vid-border {
+	border: solid 4px #666666;
+	border-radius: 6px;
+	margin-bottom: 1em;
+}
+
+/*--------------*\
+	 Social Media
+\*--------------*/
+
+.social {
+	margin: 1em 0 1.5em;
+	// text-align: center;
+	text-align: left;
+
+	@media (max-width: $screen-xs-max) { 
+		margin: .5em 0 .75em;
+	}
+
+	@media (max-width: $screen-xs) { 
+		margin-bottom: .5em;
+	}
+
+	&.gad {
+		margin: 0em auto 1.5em;
+
+		@media (max-width: $screen-xs-max) { 
+			margin-top: 0em;
+		}
+	}
+
+	.facebook{
+		display: inline-block;
+    position: relative;
+    height: 18px;
+	}
+
+	.linked-in {
+		display: inline-block;
+    position: relative;
+    
+    margin-left: 10px;
+	}
+
+	.twitter {
+		display: inline-block;
+    position: relative;
+    
+    margin-left: 5px;
+	}
+
+	.pinterest {
+		display: inline-block;
+    position: relative; 
+    margin-left: 5px;
+	}
+
+	.google {
+		display: inline-block;
+    position: relative;
+    margin-left: 5px;
+    width: 10px;
+	}
+
+	.email {
+		display: inline-block;
+    position: relative;
+    // margin-left: 80px;
+    margin-left: 10px;
+    font-size: 22px;
+
+    a{
+    	&:link{
+    		color: #7D7D7D;
+    	}
+
+    	&:hover {
+				color: #C9C9C9;
+    	}
+    }
+	}
+
+	.linked-in,.twitter,.pinterest,.google,.email{
+    top: 5px;
+
+    @media (min-width: $screen-lg-min) { 
+		 top: 6px;
+		}
+	}
+
+	/* --Firefox Adjustment-- */
+	@-moz-document url-prefix() {
+	 .linked-in,.twitter,.pinterest,.google,.email {
+	   top: 6px;
+
+	    @media (min-width: $screen-lg-min) { 
+			 top: 7px;
+			}
+	 }
+	}
+
+	/* ---iPhone 5 class adjust--- */
+	@media (max-width: 474px) { 
+		.pinterest {
+			top: 10px;
+  		margin-left: 0px;
+		}
+
+		.google {
+			top: 10px;
+		}
+
+		.email {
+			// top: 10px;
+		}
+	}
+	
+}//end .social
+
+/*-------*\
+	 CTA
+\*-------*/
+
+.cta__box {
+	text-align: center;
+
+	.cta--headline {
+		font-size: 1.875em;
+		line-height: 1.2;
+		font-style: italic;
+		margin: 0;
+
+		@media (max-width: $screen-xs-max) { 
+			font-size: 1.5em;
+		}
+
+		&.or-call {
+			font-style: normal;
+
+			span {
+				color: $red;
+				font-weight: 600;
+			}
+		}
+	}
+
+	//Default Button Override
+	.dd-btn {
+	  display: inline-block;
+	  font-size: 2.625em;
+	  font-weight: 600;
+	  // text-shadow: none;
+	  text-shadow: 0px 1px 2px #666666;
+	  min-width: auto;
+	  width: auto;
+	  padding: 10px 2em;
+
+	  @media (max-width: $screen-xs) { 
+	    padding: 10px 15px;
+	    font-size: 2em;
+	  }  
+	}
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*--------*\
+	 Disqus
+\*--------*/
+
+.discussion-intro {
+
+	p {
+		font-size: 1.25em;
+		line-height: 1.2;
+		padding-right: 10px;
+
+		@media (max-width: $screen-sm-max) { 
+			margin-top: .75em;
+		}
+
+		@media (max-width: $screen-xs-max) { 
+			font-size: 1.14em;
+		}
+	}
+
+	span {
+		font-weight: 600;
+	}
+}

@@ -1,0 +1,116 @@
+<!-- Modifed for 3 total Videos -->
+
+<div class="vid-header">
+  <div class="container-fluid">
+    <div class="container vid-container">
+      <div class="row">
+
+        <div class="col-sm-10 col-sm-push-2">
+          <div class="row">
+            
+            <!-- Video 1 -->
+            <div class="vid-thumb vid-1 <%=ActiveVid1%> comingsoon col-sm-3">
+            <!-- apply .active to .vid-thumb to add an arrow -->
+            <!-- Add anchor tag only to video that is on -->
+              
+              <!-- ACTIVATED -->
+              <div class="item <%=ActiveVid1%>">
+                <a href="<%=LinkVideo1%>"> 
+                  <img src="img/video1-thumb-on.jpg" alt="">
+                 
+                  <div class="revealed">
+                    <p class="vid-num">VIDEO #1</p>
+                    <p class="free-dl">Plus Free Download</p>
+                    <p class="vid-title"> </p>
+                  </div>
+                </a>
+                
+                <img class="active-arrow-blue" src="img/active-triangle-blue.png" alt="">
+              </div>
+              <!-- END ACTIVATED -->
+              
+              <!-- NOT ACTIVATED -->
+              <div class="<%=LinkVideo1CssOff%>">
+                <img src="img/video1-thumb-off.jpg" alt="">
+                
+                <div class="not-revealed">
+                  <p class="vid-num">VIDEO #1</p>
+                  <p class="free-dl">Plus Free Download</p>
+                  <p class="vid-title">Coming Soon...</p>
+                </div>
+                
+                <img class="active-arrow-blue" src="img/active-triangle-blue.png" alt="">
+              </div>
+              <!-- END NOT ACTIVATED -->
+            </div> <!-- /vid-thumb col -->
+          
+            
+            <!--Video 2-->   
+            <div class="vid-thumb vid-2 <%=ActiveVid2%> comingsoon col-sm-3">
+              <!-- ACTIVATED -->
+              <div class="<%=LinkVideo2Css%> item <%=ActiveVid2%>">
+                <a href="<%=LinkVideo2%>">
+                  <img src="img/video2-thumb-on.jpg" alt="">
+                
+                  <div class="revealed">
+                    <p class="vid-num">VIDEO #2</p>
+                    <p class="free-dl">Plus Free Download</p>
+                    <p class="vid-title"> </p>
+                  </div>
+                </a>
+                
+                <img class="active-arrow-blue" src="img/active-triangle-blue.png" alt="">
+              </div>
+              <!-- END ACTIVATED -->
+              
+              <!-- NOT ACTIVATED -->
+              <div class="<%=LinkVideo2CssOff%>">
+                <img src="img/video2-thumb-off.jpg" alt="">
+                
+                <div class="not-revealed">
+                  <p class="vid-num">VIDEO #2</p>
+                  <p class="free-dl">Plus Free Download</p>
+                  <p class="vid-title">Coming Soon...</p>
+                </div>
+                
+                <img class="active-arrow-blue" src="img/active-triangle-blue.png" alt="">
+              </div>
+              <!-- END NOT ACTIVATED -->
+            </div> <!-- /vid-thumb col -->
+
+            <!--Video 3-->
+        		<div class="vid-thumb vid-3 <%=ActiveVid3%> comingsoon col-sm-3">
+              <!-- ACTIVATED -->
+              <div class="<%=LinkVideo3Css%> item <%=ActiveVid3%>">
+                <a href="<%=LinkVideo3%>" target="_blank">
+                  <img src="img/video3-thumb-on.jpg" class="img-responsive" alt="">
+                  
+                  <div class="revealed">
+                    <p class="vid-num">Live Training Broadcast</p>
+                    <p class="free-dl">Plus Bonus</p>
+                    <p class="vid-title"> </p>
+                  </div>
+                </a>
+
+                <img class="active-arrow-blue" src="img/active-triangle-blue.png" alt="">
+              </div>
+              <!-- END ACTIVATED -->
+              
+              <!-- NOT ACTIVATED -->
+              <div class="<%=LinkVideo3CssOff%>">
+                <img src="img/video3-thumb-off.jpg" class="img-responsive" alt="">
+                  <div class="not-revealed">
+                    <p class="vid-num">Live Training Broadcast</p>
+                    <p class="free-dl">Plus Bonus</p>
+                    <p class="vid-title">May 17, 2016</p>
+                  </div>
+                <img class="active-arrow-blue" src="img/active-triangle-blue.png" alt="">
+              </div>
+              <!-- END NOT ACTIVATED -->
+            </div> <!-- /vid-thumb col -->
+          </div><!-- /row -->
+        </div><!-- /col -->
+      </div><!-- /row -->
+    </div> <!-- container -->
+  </div> <!-- /container-fluid -->      
+</div><!-- /vid-header -->
