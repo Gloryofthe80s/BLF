@@ -51,6 +51,10 @@ html, body {
     overflow-y: auto;
 }
 
+body {
+    padding-bottom: 160px;
+}
+
 //Al added this class
 .itemNoShow {
     display: none;
@@ -167,7 +171,11 @@ html, body {
     background: url(../img/gray-gradient-bg.png) repeat-x;
     text-align: center;
     z-index: 1;
+    padding-top: 100px;
     
+    @media (max-width: $screen-sm-max) { 
+        padding-top: 40px;
+    }
     h1 {
         color: $red;
     }

@@ -7,8 +7,8 @@ header {
   border-bottom: 3px solid #ac2b28;
   text-align: right;
   height: 35px;
-  margin-bottom: 100px;
-  z-index: 1;
+  /*margin-bottom: 100px;*/
+  z-index: 99999;
 }
 @media (max-width: 767px) {
   header {
@@ -41,6 +41,7 @@ header .header-logo {
   top: 5px;
   left: 0;
   width: 120px;
+  z-index: 9999;
 }
 @media (max-width: 991px) {
   header .header-logo {

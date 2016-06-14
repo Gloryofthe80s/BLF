@@ -7170,6 +7170,10 @@ html, body {
   overflow-y: auto;
 }
 
+body {
+  padding-bottom: 160px;
+}
+
 .itemNoShow {
   display: none;
 }
@@ -7271,6 +7275,12 @@ html, body {
   background: url(../img/gray-gradient-bg.png) repeat-x;
   text-align: center;
   z-index: 1;
+  padding-top: 100px;
+}
+@media (max-width: 991px) {
+  .hero-content {
+    padding-top: 40px;
+  }
 }
 .hero-content h1 {
   color: #ac2b28;
